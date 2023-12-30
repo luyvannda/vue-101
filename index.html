@@ -23,8 +23,10 @@
         </div>
         <div class="product-info">
           <h1>{{ product }}</h1>
-          <p>Check out <a :href="url" target="_blank"
-              rel="noopener noreferrer">my dev bio</a></p>
+          <p v-if="inventory > 10">In Stock</p>
+          <p v-else-if="inventory <=10 && inventory > 0">Almost sold out</p>
+          <p v-else>Out of stock</p>
+          <p v-if="onSale">On Sale</p>
         </div>
       </div>
     </div>
