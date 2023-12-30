@@ -14,27 +14,28 @@
   <div id="app">
     <div class="nav-bar"></div>
 
+    <div class="cart">Cart({{ cart }})</div>
+
     <div class="product-display">
       <div class="product-container">
         <div class="product-image">
-          <img :src="image" alt="Socks image">
-
-          <!-- v-bind short-hand is simply ":" -->
+          <img v-bind:src="image">
         </div>
         <div class="product-info">
           <h1>{{ product }}</h1>
           <p v-if="inStock">In Stock</p>
+          <p v-else>Out of Stock</p>
           <ul>
-            <li v-for="detail in details">{{detail}}</li>
+            <li v-for="detail in details">{{ detail }}</li>
           </ul>
-
-          <ul>
-            <li v-for="(size, index) in sizes" :key="index">{{size}}</li>
-          </ul>
-
-          <div v-for="variant in variants" :key="variant.id">{{variant.color}}
+          <div v-for="variant in variants" :key="variant.id"
+            @mouseover="updateImage(variant.image)">{{ variant.color }}
           </div>
+          <button class="button" @click="addToCart">Add to Cart</button>
+          <button class="button" @click="removeFromCart">Remove from
+            Cart</button>
 
+          <!-- shorthand of v-on: is "@" -->
         </div>
       </div>
     </div>
