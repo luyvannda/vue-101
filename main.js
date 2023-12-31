@@ -37,7 +37,7 @@ const app = Vue.createApp({
     promotion() {
       if (this.inStock <= 0) {
         this.onSale = false
-        return this.title
+        return ""
       } else if (this.inStock > 0) {
         this.onSale = true
         return this.title + " is on sale"
