@@ -18,10 +18,8 @@ app.component('product-display', {
           <p v-if="inStock">In Stock</p>
           <p v-else>Out of Stock</p>
           <p>Shipping: {{shipping}} </p>
-          
-          <ul>
-            <li v-for="detail in details">{{ detail }}</li>
-          </ul>
+
+          <product-details :details="details"> </product-details>
 
           <div v-for="(variant, index) in variants" :key="variant.id"
             @mouseover="updateVariant(index)" class="color-circle"
@@ -31,7 +29,8 @@ app.component('product-display', {
             @click="addToCart">Add to Cart</button>
         </div>
       </div>
-    </div>`,
+    </div>    
+    `,
 
   data() {
     return {
@@ -85,3 +84,4 @@ app.component('product-display', {
     }
   }
 })
+
