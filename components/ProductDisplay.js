@@ -33,7 +33,7 @@ app.component('product-display', {
 
         </div>
       </div>
-
+      <review-list :reviews="reviews"></review-list>
       <review-form @review-submitted="addReview"></review-form>
     </div>    
     `,
