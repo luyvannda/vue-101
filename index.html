@@ -11,13 +11,13 @@
 
   <body class="h-full grid place-items-center">
     <div id="app">
-      <section>
+      <section v-if="inProgressAssignments.length">
 
         <h2 class="font-bold mb-2">In Progress</h2>
 
         <ul>
           <li
-              v-for="assignment in assignments.filter(a => !a.complete)"
+              v-for="assignment in inProgressAssignments"
               :key="assignment.id">
             <label>
               {{ assignment.name }}
@@ -29,12 +29,12 @@
 
       </section>
 
-      <section class="mt-8">
+      <section class="mt-8" v-if="completedAssignments.length">
 
         <h2 class="font-bold mb-2">Completed</h2>
 
         <ul>
-          <li v-for="assignment in assignments.filter(a => a.complete)"
+          <li v-for="assignment in completedAssignments"
               :key="assignment.id">
             <label>
               {{ assignment.name }}
@@ -61,6 +61,15 @@
           }
         },
 
+        computed: {
+          completedAssignments() {
+            return this.assignments.filter(a => a.complete)
+          },
+
+          inProgressAssignments() {
+            return this.assignments.filter(a => !a.complete)
+          }
+        }
       };
 
       Vue.createApp(app).mount("#app");
