@@ -14,32 +14,10 @@
       <app-button>Submit</app-button>
     </div>
 
-    <script>
-      let app = {
-        components: {
-          'app-button': {
-            template: /*html*/
-              `
-            <button class="bg-gray-200 hover:bg-gray-400 border rounded px-5 py-2 disabled:cursor-not-allowed" 
-            :disabled="processing"
-            >
-            <slot />
-              
-            </button>    
-  
-            `,
+    <script type="module">
+      import App from "./components/App.js"
 
-            data() {
-              return {
-                processing: false
-              };
-            }
-
-          },
-        }
-      };
-
-      Vue.createApp(app).mount("#app");
+      Vue.createApp(App).mount("#app");
     </script>
 
   </body>
