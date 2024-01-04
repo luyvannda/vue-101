@@ -5,9 +5,13 @@ Special thanks to Zero To Mastery free crash course on youtube for practical tut
 
 Resources:
 
- Vue 101 Crash Course: Learn Vue JS (6 HOURS!) + Build Your First Project | Zero To Mastery
- https://www.youtube.com/watch?v=IgBOT0QyByQ
-
 Intro to Vue 3 | Vue Mastery
 
 https://www.vuemastery.com/courses/intro-to-vue-3/
+
+
+Learn Vue 3 Step by Step | Laracasts
+
+https://laracasts.com/series/learn-vue-3-step-by-step/episodes/6?autoplay=true
+
+2:42

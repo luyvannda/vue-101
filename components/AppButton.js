@@ -10,6 +10,18 @@ export default {
   
             `,
 
+  props: {
+    type: {
+      type: String,
+      default: 'primary'
+    },
+
+    processing: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   data() {
     return {
       processing: false
