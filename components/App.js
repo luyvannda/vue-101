@@ -41,6 +41,7 @@ export default {
       </section>
 
     `,
+
     data() {
       return {
         assignments: [
