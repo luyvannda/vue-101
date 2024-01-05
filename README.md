@@ -13,5 +13,3 @@ https://www.vuemastery.com/courses/intro-to-vue-3/
 Learn Vue 3 Step by Step | Laracasts
 
 https://laracasts.com/series/learn-vue-3-step-by-step/episodes/6?autoplay=true
-
-2:42
