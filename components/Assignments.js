@@ -8,7 +8,14 @@ export default {
     `
     <section class="space-y-6">
      <assignment-list :assignments="filters.inProgress" title="In Progress"> </assignment-list>
-     <assignment-list :assignments="filters.completed" title="completed"> </assignment-list>
+     <assignment-list :assignments="filters.completed" title="Completed"> </assignment-list>
+
+     <form @submit.prevent="add">
+        <div class="border border-gray-600 text-black">
+            <input v-model="newAssignment"  placeholder="New assignment..." class="p-2"/>
+            <button type="submit" class="bg-white border-l p-2 rounded-r">Add</button>
+        </div>
+     </form>
 
      </section>
 `,
@@ -19,7 +26,9 @@ export default {
         { id: 1, name: 'Finish project', complete: false },
         { id: 2, name: 'Read chapter 4', complete: false },
         { id: 3, name: 'Turn in homework', complete: false }
-      ]
+      ],
+
+      newAssignment: ""
     }
   },
 
@@ -31,5 +40,11 @@ export default {
         completed: this.assignments.filter(a => a.complete)
       }
     }
-  }
+  },
+
+  methods: {
+    add() {
+      alert(this.newAssignment);
+    }
+  },
 }
