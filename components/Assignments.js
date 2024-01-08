@@ -12,7 +12,7 @@ export default {
 
      <form @submit.prevent="add">
         <div class="border border-gray-600 text-black">
-            <input v-model="newAssignment"  placeholder="New assignment..." class="p-2"/>
+            <input v-model="newAssignment"  placeholder="New assignment..." class="p-2" required/>
             <button type="submit" class="bg-white border-l p-2 rounded-r">Add</button>
         </div>
      </form>
@@ -44,7 +44,13 @@ export default {
 
   methods: {
     add() {
-      alert(this.newAssignment);
+      this.assignments.push({
+        name: this.newAssignment,
+        complete: false,
+        id: this.assignments.length + 1
+      });
+
+      this.newAssignment = '';
     }
   },
 }
