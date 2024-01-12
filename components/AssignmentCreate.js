@@ -18,7 +18,10 @@ export default {
 
     methods: {
         add() {
-            return
+
+            this.$emit('add', this.newAssignment);
+
+            this.newAssignment = '';
         }
     },
 }

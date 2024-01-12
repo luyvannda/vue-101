@@ -1,5 +1,7 @@
 export default {
-  template: `
+  template: 
+  /*html*/
+  `
         <li>
             <label class="p-2 flex justify-between items-center ">
                 {{ assignment.name }}
